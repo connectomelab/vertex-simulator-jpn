@@ -15,7 +15,7 @@ Modifying the ferret model
 |Number of layers          |   cvc_tissue.m > TP.numLayers                                    | http://mouse.brain-map.org/           |
 |Tissue conductivity       |   cvc_tissue.m > TP.tissueConductivity                           | e.g. https://iopscience.iop.org/article/10.1088/0031-9155/58/11/3599/pdf, https://core.ac.uk/display/29202573 |
 |Number of neuron types    |   cvc_tissue.m > TP.numGroups                                    | Database of cell types: http://celltypes.brain-map.org/data?donor__species=Mus%20musculus&nr__reconstruction_type=[full,dendrite-only] Probably don't want to use them all though! Selecting the most important/ combining similar types would be good ways to simplify this model.|
-|Proportion of neuron type |  cvc_neuronsNoisy.m > NP(i).modelProportion                      | https://www.frontiersin.org/articles/10.3389/fnana.2018.00083/full |
+|Proportion of neuron type |  cvc_neurons_noisy.m > NP(i).modelProportion                      | https://www.frontiersin.org/articles/10.3389/fnana.2018.00083/full |
 |Neuron capcitance         |  cvc_neuronsNoisy.m > NP(i).C                                    | detailed parameter info at the allen brain atlas, e.g. http://celltypes.brain-map.org/experiment/electrophysiology/623185845 |
 |Neuron reset potential    |  cvc_neuronsNoisy.m > NP(i).v_reset                              | detailed parameter info at the allen brain atlas, e.g. http://celltypes.brain-map.org/experiment/electrophysiology/623185845 |
 |Neuron layer              |  cvc_neuronsNoisy.m > NP(i).somaLayer                            | Determine which layer the neuron population somas exist in.  |
