@@ -24,7 +24,10 @@ Modifying the ferret model
 |Neuron IDs to record from |  cvc_recording.m > RS.v_m                                        | Pass an array of values representing neuron IDs to record the soma membrane voltage from. |
 |Simulation time           |  cvc_simulation.m > SS.simulationTime                            | This is the time the simulation will run for (ms), needs to be >150 to avoid initial artefacts.  |
 |Parallel pool size        |  cvc_simulation.m > SS.poolSize	                              | This can be set according to the host computer's CPU availability.  |
-
+|Number of neuron compartments | cvc_neurons_noisy.m > NP(i).numCompartments               | This is dependent on the detail needed. Fewer compartments will be quicker to run, more will be more biologically accurate. Recommend keeping these the same.|
+|Neuron compartment lengths | cvc_neurons_noisy.m > NP(i).compartmentLengthArr             | Scale these according to the neuron dimensions desired. |
+|Neuron compartment diameters | cvc_neurons_noisy.m > NP(i).compartmentDiameterArr         | Scale these according to the neuron dimensions desired. |
+|Neuron compartment positions | cvc_neurons_noisy.m > NP(i).compartmentXPositionMat (compartmentYPositionMat,compartmentZPositionMat) | Scale these according to the neuron dimensions desired, needs to match the lengths |
 
 There are further parameters that can be customised, including neuron shape and compartment dimensions, the simulation model used (currently AdEx) etc., but these seem like the main ones that can be quickly changed.
 The Allen brain atlas has neuron morphology details for mice: http://celltypes.brain-map.org/data?donor__species=Mus%20musculus&nr__reconstruction_type=[full,dendrite-only] Also neuromorpho: Neuromorpho.org
