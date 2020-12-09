@@ -106,30 +106,9 @@ generateMesh(model);
 %solve the pde
 result = solvepde(model);
 
-
-
-
-%   figure(3)
-%  [X,Y,Z] = meshgrid(0:100:2600,300,0:100:2000);
-%  V = interpolateSolution(result,X,Y,Z);
-%  V = reshape(V,size(X));
-% figure
-% colormap jet
-% contourslice(X,Y,Z,V,1:100:1000,1:10:1800,1:100:700)
-
-
-% contourslice(X,Y,Z,V,1:100:2600,1:100:00,1:100:700)
-% xlabel('x')
-% ylabel('y')
-% zlabel('z')
-% colorbar
-% view(-11,14)
-% axis equal
-% end
-% 
-
-%contourslice(X,Y,Z,V,1:10:1000,1,500:10:1500)
-
+u = result.NodalSolution; % so u is the solution
+ 
+pdeplot3D(model,'ColorMapData', u,'FaceAlpha',0.3);
 
 
 end
