@@ -1,8 +1,8 @@
 
 % please load data like the following methods:
- load('./group_L/data1/spike.mat');
- load('./group_L/data1/layer.mat');
- cell_categ = load('./group_L/data1/cell_categ_exc.txt');
+ load('./group_L/data2/spike.mat');
+ load('./group_L/data2/layer.mat');
+ cell_categ = load('./group_L/data2/cell_categ_exc.txt');
 
 % load('./group_R/data1/spike.mat');
 % load('./group_R/data1/layer.mat');
@@ -24,7 +24,7 @@ spike{end-2}
 
 % 
 for kk = 1:length(spike)-2; 
-    FR(kk)=1000*length(spike{kk})./spike{end}(2);
+    FR(kk)=1000*length(spike{kk})./spike{end}(2); % This seems to be the Firing Rate, as it is the ratio of spikes over max possible spikes
 end
 
 % this is the number of neurons
@@ -87,3 +87,28 @@ for mm = 0:1
 end
 
  FR_med
+
+ 
+%% Spike raster for comparison with VERTEX
+
+% Replicate VERTEX Results.Spikes < there are too many spikes!
+% count = 1;
+% for k = 1:length(spike)-2; 
+%     Spikes(count:length(spike{k}),1) = spike{k};
+%     Spikes(count:length(spike{k}),2) = k*ones(length(spike{k}));
+%     count = length(spike{k})+1;
+% end
+
+
+% L5 inhibitory:
+% to_plot = find(((cell_categ==0).*(layer_categ==4))==1);
+% 
+% spikes_to_plot = [];
+% count = 1;
+% for k = 1:length(to_plot)
+%     spikes_to_plot = [spikes_to_plot,spike{to_plot(k)}];
+%     nrnID = count*ones(length(spike{to_plot(k)}));
+% end
+% 
+% plot(spikes_to_plot, nrnID)
+% title('Inhibitory neurons L5 Raster')

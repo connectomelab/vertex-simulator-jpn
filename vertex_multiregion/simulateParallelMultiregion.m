@@ -28,7 +28,7 @@ spmd
     
     recordIntra = RecVar.recordIntra;
     recordI_syn = RecVar.recordI_syn;
-    recordFac_syn = RecVar.recordFac_syn;
+    %recordFac_syn = RecVar.recordFac_syn;
     recordWeights = RecVar.recordWeights;
     recordWeightsArr = RecVar.recordWeightsArr;
     comCount = SS.minDelaySteps;
